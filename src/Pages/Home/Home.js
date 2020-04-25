@@ -8,6 +8,7 @@ const Home = () =>{
     
     return(
         <div>
+           <Header></Header>
            <TrendingMovies></TrendingMovies> 
            <TrendingTvShows></TrendingTvShows>
         </div>

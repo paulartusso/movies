@@ -1,19 +1,33 @@
-import React from "react";
-import HeaderContent from "./HeaderContent";
+import React, {useState, useEffect} from "react";
+import Axios from "axios";
 import "./Header.css";
 
-const Header = ({movies}) =>{
+const Header = () =>{
+
+    const [randomMovie, setRandomMovie] = useState([]);
+    
+    useEffect(()=> {
+        let baseUrl = "https://api.themoviedb.org/3/trending/movie/week?api_key=1a33d2a63d1685081b5d07f619b37cd4";
+        Axios.get(baseUrl)
+        .then(res => {
+            setRandomMovie(res.data.results);
+        })
+        .then(()=>getRandomMovie())
+        .catch(er => console.log(er))
+
+    }, []);
+
+    const getRandomMovie = () =>{
+        return randomMovie[Math.floor(Math.random())*randomMovie.length];
+    }
+
     return(
         <div>
             <div className="header-container">
-                <HeaderContent
-                    movies={movies}
-                    title={movies.title}
-                >
-                <img className="header-image" src={"https://image.tmdb.org/t/p/w370_and_h556_bestv2/db32LaOibwEliAmSL2jjDF6oDdj.jpg"}/>
-                </HeaderContent>
+                
             </div>
-        </div>                )
+        </div>                
+        )
 }
 
 export default Header;

@@ -18,8 +18,6 @@ const TrendingTvShows = () =>{
         .catch(er => console.log(er));
     }, []);
 
-    
-      
     return(
         <div>
             <span className="title-span">

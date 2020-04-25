@@ -9,9 +9,7 @@ const TvCardContainer = ({tvShows}) =>{
 
             {tvShows.map(item=>{
                     return(
-                        <Card 
-                        tvShows={tvShows}
-                        >
+                        <Card>
                         <img src={`https://image.tmdb.org/t/p/w370_and_h556_bestv2${item.poster_path}`} className="image"/>
                         </Card>   
                     )
