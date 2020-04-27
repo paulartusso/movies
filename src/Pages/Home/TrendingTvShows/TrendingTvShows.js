@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
 import Axios from "axios";
-import TvCardContainer from "../../Componentes/CardContainer/TvCardContainer";
-import "../../Styles/Common.css";
+import Titles from "../../../Componentes/Titles/Titles";
+import TvCardContainer from "../../../Componentes/CardContainer/TvCardContainer";
+import "../../../Styles/Common.css";
 
 const TrendingTvShows = () =>{
 
@@ -20,14 +21,9 @@ const TrendingTvShows = () =>{
 
     return(
         <div>
-            <span className="title-span">
-                <h2 className="h2">
-                    Trending TV Shows
-                </h2>
-                <h3 className="h3">
-                    Explore All
-                </h3>
-            </span>
+            <Titles>
+                {"Trending Tv Shows"}
+            </Titles>
             <TvCardContainer
             tvShows={tvShows}
             ></TvCardContainer>
