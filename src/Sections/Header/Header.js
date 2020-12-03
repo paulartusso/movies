@@ -24,7 +24,7 @@ const Header = () =>{
     return(
         <div>
             <div className="header-container">
-                
+                {randomMovie ? "bla" : null }
             </div>
         </div>                
         )
