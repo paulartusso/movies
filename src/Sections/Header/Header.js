@@ -19,7 +19,7 @@ const Header = () =>{
 
     useEffect(()=>{
         setRandomMovie(getRandomMovie());
-    }, [moviesList]);
+    }, [moviesList, getRandomMovie]);
 
     const getRandomMovie = () =>{
         return moviesList[Math.floor(Math.random())*randomMovie.length];
