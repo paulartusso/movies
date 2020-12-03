@@ -18,12 +18,8 @@ const Header = () =>{
     }, []);
 
     useEffect(()=>{
-        setRandomMovie(getRandomMovie());
-    }, [moviesList, getRandomMovie]);
-
-    const getRandomMovie = () =>{
-        return moviesList[Math.floor(Math.random())*randomMovie.length];
-    }
+        setRandomMovie(moviesList[Math.floor(Math.random()) * moviesList.length]);
+    }, [moviesList]);
 
     return(
         <div>
